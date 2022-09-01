@@ -1,6 +1,6 @@
 #include"main.h"
 
-void main(void)
+int main(void)
 {
     List_t *List = NULL;
 	List_State_t ListState = LIST_NEMPTY;
@@ -95,4 +95,5 @@ void main(void)
     printf("This APP is created by: Eng.Mahmoud Abdelraoof Mahmoud\n");
     printf("                 GOOD BYE\n");
     printf("******************************************************************************\n");
+	return 0;
 }
