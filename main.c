@@ -21,7 +21,7 @@ int main(void)
         printf("To view No. of available books  Enter '4'\n");
         printf("To Exist the Library App        Enter '5'\n");
         printf("---------------------------------------------\n");
-        printf("---> You Choice is: ");
+        printf("---> Your Choice is: ");
         scanf("%d",&choose);
 		fflush(stdin);
         switch(choose)
@@ -58,7 +58,7 @@ int main(void)
 				List_Empty(List,&ListState);
 				if(ListState==LIST_EMPTY)
 				{
-					printf("Sorry!! The library is EMPTY, there are no Books to display\n");
+					printf("Sorry!! The library is EMPTY, there are no Books to delete\n");
 				}
 				else
 				{
