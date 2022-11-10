@@ -92,7 +92,7 @@ int main(void)
     }
     while(choose!=5);
     printf("Thanks for using LIBRARY APP\n");
-    printf("This APP is created by: Eng.Mahmoud Abdelraoof Mahmoud\n");
+    printf("This APP is created by: Eng.Mahmoud Abdel-Raouf Mahmoud\n");
     printf("                 GOOD BYE\n");
     printf("******************************************************************************\n");
 	return 0;
