@@ -84,7 +84,7 @@ int main(void)
 				}
 				else
 				{
-					printf("The Number of available Books is %d",List->Size);
+					printf("The Number of available Books is %d\n",List->Size);
 				}
 				break;
 			}
