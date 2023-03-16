@@ -35,7 +35,7 @@ int main(void)
                 else
                 {
                     printf("-------------------- The Available Books --------------------\n");
-                    DisplayData(List,BookMat,AuthorMat);
+                    DisplayData(List);
                 }
 
                 break;

@@ -266,7 +266,7 @@ Error_State_t RemoveFromPosistion(List_t *List,u8 Pos)
 
 
 /********** Fun 8: to display all node in the list **********/
-Error_State_t DisplayData(List_t *List,u8 BookN[],u8 BookA[])
+Error_State_t DisplayData(List_t *List)
 {
     Error_State_t FunctionState = RET_OK;
     List_State_t List_State = LIST_NEMPTY;
@@ -283,16 +283,16 @@ Error_State_t DisplayData(List_t *List,u8 BookN[],u8 BookA[])
             while(BufferPtr->Next != NULL)
             {
                 printf("Book NO.%d is: \n",BufferPtr->No_Of_Node);
-                printf("The Book Name   : %s\n",BookN);
-                printf("The Book Author : %s\n",BookA);
+                printf("The Book Name   : %s\n",BufferPtr->Book_Name);
+                printf("The Book Author : %s\n",BufferPtr->Author_Name);
                 printf("The Book Price  : ");
                 printf("%d\n",BufferPtr->Value);
                 printf("------------------------------------------\n");
                 BufferPtr = BufferPtr->Next;
             }
             printf("Book NO.%d is: \n",BufferPtr->No_Of_Node);
-            printf("The Book Name   : %s\n",BookN);
-            printf("The Book Author : %s\n",BookA);
+            printf("The Book Name   : %s\n",BufferPtr->Book_Name);
+            printf("The Book Author : %s\n",BufferPtr->Author_Name);
             printf("The Book Price  : ");
             printf("%d\n",BufferPtr->Value);
             printf("------------------------------------------\n");
