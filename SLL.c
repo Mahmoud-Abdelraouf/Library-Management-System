@@ -49,8 +49,20 @@ Error_State_t List_Empty(List_t *List , List_State_t *ReturnValue)
     return FunctionState;
 }
 
+/********** Fun 3: to initialize the node **********/
+void InitNode(Node_t *Node)
+{
+	for(int i = 0;i<BOOK_MAX;i++)
+	{
+		Node->Book_Name[i]=0;
+	}
+	for(int i = 0;i<AUTHOE_MAX;i++)
+	{
+		Node->Author_Name[i]=0;
+	}
+}
 
-/********** Fun 3: to create the node and add the elemnts in it **********/
+/********** Fun 4: to create the node and add the elemnts in it **********/
 Error_State_t AddToBack(List_t *List,u8 BookN[],u8 BookA[],s32 Data)
 {
     Error_State_t FunctionState = RET_OK;
@@ -58,6 +70,7 @@ Error_State_t AddToBack(List_t *List,u8 BookN[],u8 BookA[],s32 Data)
     if(NULL != List)
     {
         Node_t *NodePtr = (Node_t *)malloc(sizeof(Node_t));
+		InitNode(NodePtr); //initialize the node
         if(NodePtr != NULL)
         {
             NodePtr -> Value = Data;
@@ -100,7 +113,7 @@ Error_State_t AddToBack(List_t *List,u8 BookN[],u8 BookA[],s32 Data)
 }
 
 
-/********** Fun 4: to remove the node from the back of the list **********/
+/********** Fun 5: to remove the node from the back of the list **********/
 static Error_State_t RemoveFromBack(List_t *List ,s32 *Ret_Data)
 {
     Error_State_t FunctionState = RET_OK;
@@ -142,7 +155,7 @@ static Error_State_t RemoveFromBack(List_t *List ,s32 *Ret_Data)
     return FunctionState;
 }
 
-/********** Fun 5: to remove the node from the front of the list **********/
+/********** Fun 6: to remove the node from the front of the list **********/
 Error_State_t RemoveFromFront(List_t *List, s32 *Ret_Data)
 {
     Error_State_t FunctionState = RET_OK;
@@ -172,7 +185,7 @@ Error_State_t RemoveFromFront(List_t *List, s32 *Ret_Data)
 }
 
 
-/********** Fun 6: to detect the range of the list and control other process depend on that **********/
+/********** Fun 7: to detect the range of the list and control other process depend on that **********/
 Range_State_t CheckRange(List_t *List,u32 Pos)
 {
     Range_State_t FunctionState = RET_OUT_SIZE;
@@ -199,7 +212,7 @@ Range_State_t CheckRange(List_t *List,u32 Pos)
 }
 
 
-/********** Fun 7: to remove any node throughout the list **********/
+/********** Fun 8: to remove any node throughout the list **********/
 Error_State_t RemoveFromPosistion(List_t *List,u8 Pos)
 {
     Error_State_t FunctionState = RET_OK;
@@ -265,42 +278,32 @@ Error_State_t RemoveFromPosistion(List_t *List,u8 Pos)
 }
 
 
-/********** Fun 8: to display all node in the list **********/
-Error_State_t DisplayData(List_t *List)
+/********** Fun 9: to display all node in the list **********/
+void DisplayData(List_t *List)
 {
-    Error_State_t FunctionState = RET_OK;
-    List_State_t List_State = LIST_NEMPTY;
     Node_t *BufferPtr = List->Head;
     if(NULL!=List)
     {
-        List_Empty(List,&List_State);
-        if(List_State == LIST_EMPTY)
-        {
-           FunctionState = RET_LIST_EMPTY;
-        }
+        if(List->Size==0)
+		{
+			printf("The library is empty. No books to view!!\n");
+		}
         else
         {
-            while(BufferPtr->Next != NULL)
+			printf("-------------------- The Available Books --------------------\n");
+            while(BufferPtr != NULL)
             {
-                printf("Book NO.%d is: \n",BufferPtr->No_Of_Node);
-                printf("The Book Name   : %s\n",BufferPtr->Book_Name);
+                printf("Book NO.%d\n",BufferPtr->No_Of_Node);
+				printf("The Book Name   : %s\n",BufferPtr->Book_Name);
                 printf("The Book Author : %s\n",BufferPtr->Author_Name);
-                printf("The Book Price  : ");
-                printf("%d\n",BufferPtr->Value);
+                printf("The Book Price  : %d\n",BufferPtr->Value);
                 printf("------------------------------------------\n");
                 BufferPtr = BufferPtr->Next;
             }
-            printf("Book NO.%d is: \n",BufferPtr->No_Of_Node);
-            printf("The Book Name   : %s\n",BufferPtr->Book_Name);
-            printf("The Book Author : %s\n",BufferPtr->Author_Name);
-            printf("The Book Price  : ");
-            printf("%d\n",BufferPtr->Value);
-            printf("------------------------------------------\n");
         }
     }
     else
     {
-        FunctionState = RET_NULL_PTR;
+        printf("Sorry,You pass NULL Pointer!!");
     }
-    return FunctionState;
 }

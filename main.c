@@ -10,6 +10,7 @@ int main(void)
     u8 BookMat[BOOK_MAX];
     u8 AuthorMat[AUTHOE_MAX];
     CreateList(&List);
+	printf("******************************************************************************\n");
     printf("--------------- WELCOME TO THE LIBRARY APP ---------------\n");
     do
     {
@@ -28,16 +29,7 @@ int main(void)
         {
             case 1:
             {
-               if(List->Size==0)
-                {
-                    printf("The library is empty. No books to view!!\n");
-                }
-                else
-                {
-                    printf("-------------------- The Available Books --------------------\n");
-                    DisplayData(List);
-                }
-
+				DisplayData(List);
                 break;
             }
             case 2:
@@ -50,6 +42,7 @@ int main(void)
                 printf("Enter the book price: ");
                 scanf("%d",&price);
                 AddToBack(List,BookMat,AuthorMat,price);
+				printf("---------------------------------------------\n");
                 printf("The Book has been added succefully :)\n");
                 break;
             }
@@ -58,7 +51,7 @@ int main(void)
 				List_Empty(List,&ListState);
 				if(ListState==LIST_EMPTY)
 				{
-					printf("Sorry!! The library is EMPTY, there are no Books to delete\n");
+					printf("Sorry, The library is Empty, there are no Books to delete!!\n");
 				}
 				else
 				{
@@ -71,6 +64,7 @@ int main(void)
 					else
 					{
 						RemoveFromPosistion(List,position);
+						printf("---------------------------------------------\n");
 						printf("The Book has been deleted succefully :)\n");
 					}
 				}
@@ -80,7 +74,7 @@ int main(void)
 			{
 				if(List->Size==0)
 				{
-					printf("The Library is empty. No available books to view !\n");
+					printf("The Number of available Books is: %d\n",0);
 				}
 				else
 				{
