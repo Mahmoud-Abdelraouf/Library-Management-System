@@ -199,7 +199,7 @@ Range_State_t CheckRange(List_t *List,u32 Pos)
 }
 
 
-/********** Fun 7: to remoce any node throughout the list **********/
+/********** Fun 7: to remove any node throughout the list **********/
 Error_State_t RemoveFromPosistion(List_t *List,u8 Pos)
 {
     Error_State_t FunctionState = RET_OK;
