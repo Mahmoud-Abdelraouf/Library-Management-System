@@ -50,7 +50,7 @@ extern Error_State_t AddToBack(List_t *List,u8 BookN[],u8 BookA[],s32 Data);
 static Error_State_t RemoveFromFront(List_t *List, s32 *Ret_Data);
 static Error_State_t RemoveFromBack(List_t *List ,s32 *Ret_Data);
 extern Range_State_t CheckRange(List_t *List,u32 Pos);
-extern Error_State_t RemoveFromPosistion(List_t *List,u8 Pos);
+extern Error_State_t RemoveFromPosition(List_t *List,u32 Pos);
 extern void DisplayData(List_t *List);
 
 

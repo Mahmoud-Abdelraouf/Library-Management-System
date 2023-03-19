@@ -63,7 +63,7 @@ int main(void)
 					}
 					else
 					{
-						RemoveFromPosistion(List,position);
+						RemoveFromPosition(List,position);
 						printf("---------------------------------------------\n");
 						printf("The Book has been deleted succefully :)\n");
 					}

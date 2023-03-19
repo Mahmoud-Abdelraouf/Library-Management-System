@@ -213,7 +213,7 @@ Range_State_t CheckRange(List_t *List,u32 Pos)
 
 
 /********** Fun 8: to remove any node throughout the list **********/
-Error_State_t RemoveFromPosistion(List_t *List,u8 Pos)
+Error_State_t RemoveFromPosition(List_t *List,u32 Pos)
 {
     Error_State_t FunctionState = RET_OK;
     List_State_t List_State = LIST_NEMPTY;
@@ -285,21 +285,21 @@ void DisplayData(List_t *List)
     if(NULL!=List)
     {
         if(List->Size==0)
-	{
-		printf("The library is empty. No books to view!!\n");
-	}
+		{
+			printf("The library is empty. No books to view!!\n");
+		}
         else
         {
-		printf("-------------------- The Available Books --------------------\n");
-            	while(BufferPtr != NULL)
-            	{
-                	printf("Book NO.%d\n",BufferPtr->No_Of_Node);
-			printf("The Book Name   : %s\n",BufferPtr->Book_Name);
-                	printf("The Book Author : %s\n",BufferPtr->Author_Name);
-                	printf("The Book Price  : %d\n",BufferPtr->Value);
-                	printf("------------------------------------------\n");
-               		BufferPtr = BufferPtr->Next;
-            	}
+			printf("-------------------- The Available Books --------------------\n");
+            while(BufferPtr != NULL)
+            {
+                printf("Book NO.%d\n",BufferPtr->No_Of_Node);
+				printf("The Book Name   : %s\n",BufferPtr->Book_Name);
+                printf("The Book Author : %s\n",BufferPtr->Author_Name);
+                printf("The Book Price  : %d\n",BufferPtr->Value);
+                printf("------------------------------------------\n");
+                BufferPtr = BufferPtr->Next;
+            }
         }
     }
     else
