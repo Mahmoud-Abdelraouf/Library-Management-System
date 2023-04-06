@@ -89,5 +89,6 @@ int main(void)
     printf("This APP is created by: Eng.Mahmoud Abdel-Raouf Mahmoud\n");
     printf("                 GOOD BYE\n");
     printf("******************************************************************************\n");
+	while(1);
 	return 0;
 }
